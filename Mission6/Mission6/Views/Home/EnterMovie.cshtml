@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Movie Entry";
+}
+@model Mission6.Models.EntryResponse;
+
+    <div>
+        <form method="post">
+
+            <h1>Enter a New Movie</h1>
+            <h3>Include the following information about the movie itself. (Not all fields are required).</h3>
+
+            <label asp-for="movieTitle">Title of Movie:</label>
+            <input asp-for="movieTitle" />
+            <br />
+
+            <label asp-for="Category">Movie Category:</label>
+            <input asp-for="Category" />
+            <br />
+            <label asp-for="Year">Year:</label>
+            <input asp-for="Year" />
+            <br />
+            <label asp-for="directorName">Director's Name:</label>
+            <input asp-for="directorName" />
+            <br />
+
+            <label asp-for="Rating">Movie Rating:</label>
+            <select asp-for="Rating">
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+            <br />
+
+            <label asp-for="Edited">Edited:</label>
+            <select asp-for="Edited">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <br />
+
+            <label asp-for="lentTo">Lent To:</label>
+            <input asp-for="lentTo" />
+            <br />
+
+            <label asp-for="Notes">Notes:</label>
+            <input asp-for="Notes" />
+            <br />
+
+            <input type="submit" value="Submit" />
+
+            <div asp-validation-summary="All"></div>
+        </form>
+    </div>
